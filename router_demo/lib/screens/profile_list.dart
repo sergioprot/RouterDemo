@@ -1,5 +1,5 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:router_demo/screens/profile.dart';
 
 class ProfileList extends StatelessWidget {
   const ProfileList({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class ProfileList extends StatelessWidget {
             child: Text('user_1'),
           ),
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const Profile(username: 'user_1')));
+            Beamer.of(context).beamToNamed('/members/user_1');
           },
         ),
         InkWell(
@@ -23,7 +23,7 @@ class ProfileList extends StatelessWidget {
             child: Text('user_2'),
           ),
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const Profile(username: 'user_2')));
+            Beamer.of(context).beamToNamed('/members/user_2');
           },
         ),
       ],
