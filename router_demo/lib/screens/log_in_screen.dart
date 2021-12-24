@@ -1,6 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:router_demo/logged_user.dart';
-import 'package:router_demo/screens/members_area.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({Key? key}) : super(key: key);
@@ -27,7 +27,8 @@ class _LogInScreenState extends State<LogInScreen> {
                 ? null
                 : () {
                     loggedUser.username = inputController.text;
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const MembersArea()));
+                    // AutoRouter.of(context).navigateNamed('/home');
+                    AutoRouter.of(context).pushNamed('/home');
                   },
             child: const Text('Log In'),
           ),
