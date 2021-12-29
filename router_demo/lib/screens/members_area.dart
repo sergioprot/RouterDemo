@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:router_demo/logged_user.dart';
 import 'package:router_demo/screens/profile.dart';
 import 'package:router_demo/screens/profile_list.dart';
 
+@Deprecated('Use MembersAreaNew')
 class MembersArea extends StatefulWidget {
   const MembersArea({Key? key}) : super(key: key);
 
@@ -10,6 +10,7 @@ class MembersArea extends StatefulWidget {
   _MembersAreaState createState() => _MembersAreaState();
 }
 
+@Deprecated('')
 class _MembersAreaState extends State<MembersArea> {
   int bottomTab = 0;
 
@@ -27,11 +28,13 @@ class _MembersAreaState extends State<MembersArea> {
         appBar: AppBar(
           title: const Text('Members Area'),
           bottom: bottomTab == 1
-              ? const TabBar(tabs: [
-                  Tab(child: Text('Inbox')),
-                  Tab(child: Text('Sent')),
-                  Tab(child: Text('All')),
-                ])
+              ? const TabBar(
+                  tabs: [
+                    Tab(child: Text('Inbox')),
+                    Tab(child: Text('Sent')),
+                    Tab(child: Text('All')),
+                  ],
+                )
               : null,
         ),
         body: bottomTab == 0
@@ -42,7 +45,7 @@ class _MembersAreaState extends State<MembersArea> {
                     Text('Sent'),
                     Text('All'),
                   ])
-                : Profile(username: loggedUser.username),
+                : const Profile(),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: bottomTab,
           items: const [

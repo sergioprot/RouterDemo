@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:router_demo/screens/profile.dart';
+import 'package:vrouter/vrouter.dart';
 
 class ProfileList extends StatelessWidget {
   const ProfileList({Key? key}) : super(key: key);
@@ -14,7 +14,8 @@ class ProfileList extends StatelessWidget {
             child: Text('user_1'),
           ),
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const Profile(username: 'user_1')));
+            // context.vRouter.to('/members/user_1');
+            context.vRouter.toNamed('other-profile', pathParameters: {'username': 'user_1'});
           },
         ),
         InkWell(
@@ -23,7 +24,8 @@ class ProfileList extends StatelessWidget {
             child: Text('user_2'),
           ),
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const Profile(username: 'user_2')));
+            // context.vRouter.to('/members/user_1');
+            context.vRouter.toNamed('other-profile', pathParameters: {'username': 'user_1'});
           },
         ),
       ],
