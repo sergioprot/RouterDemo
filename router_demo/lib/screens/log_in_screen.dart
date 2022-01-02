@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:router_demo/logged_user.dart';
 import 'package:vrouter/vrouter.dart';
 
+/// Log In Screen
 class LogInScreen extends StatefulWidget {
   const LogInScreen({Key? key}) : super(key: key);
 
@@ -27,7 +28,8 @@ class _LogInScreenState extends State<LogInScreen> {
                 ? null
                 : () {
                     loggedUser.username = inputController.text;
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => const MembersArea()));
+
+                    /// Navigate to Members Area
                     context.vRouter.to('/index');
                   },
             child: const Text('Log In'),

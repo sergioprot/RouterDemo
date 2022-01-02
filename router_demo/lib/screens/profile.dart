@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:router_demo/logged_user.dart';
 import 'package:vrouter/vrouter.dart';
 
+/// Profile page
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    /// Get username from url path parameters
     String username = context.vRouter.pathParameters['username'] ?? loggedUser.username;
 
     if (username == loggedUser.username) {

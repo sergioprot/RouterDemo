@@ -6,29 +6,31 @@ class ProfileList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        InkWell(
-          child: const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text('user_1'),
+    return Material(
+      child: ListView(
+        children: [
+          InkWell(
+            child: const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text('user_1'),
+            ),
+            onTap: () {
+              /// Navigate to Member Profile
+              context.vRouter.toNamed('other-profile', pathParameters: {'username': 'user_1'});
+            },
           ),
-          onTap: () {
-            // context.vRouter.to('/members/user_1');
-            context.vRouter.toNamed('other-profile', pathParameters: {'username': 'user_1'});
-          },
-        ),
-        InkWell(
-          child: const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text('user_2'),
+          InkWell(
+            child: const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text('user_2'),
+            ),
+            onTap: () {
+              /// Navigate to Member Profile
+              context.vRouter.toNamed('other-profile', pathParameters: {'username': 'user_2'});
+            },
           ),
-          onTap: () {
-            // context.vRouter.to('/members/user_1');
-            context.vRouter.toNamed('other-profile', pathParameters: {'username': 'user_1'});
-          },
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
